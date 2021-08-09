@@ -1,0 +1,140 @@
+#!bin/bash
+#check whether the parameter is two or not.
+until [[ $# = 2 && $1 = shyam && $2 = 19031688 ]]
+do
+echo "please input two parameters where first name is shyam as 1 and ID number 19031688 as 2"
+exit
+done
+#create the secret key 123 to run the script
+echo "Please Enter the secret key. "
+password=123
+counter=1
+while [ $counter -le  5 ]
+do
+echo "Enter the secret key: "
+read pass
+if [ $password = $pass ]
+then
+echo "--------------------------------------------------------------------------"
+figlet Welcome To The Program file
+echo "--------------------------------------------------------------------------"
+echo " your First Name is $1 and your id is $2"
+echo "--------------------------------------------------------------------------"
+echo -e "Date and Time of execution: \c"
+date
+echo "--------------------------------------------------------------------------"
+
+# in this function all the script from step 4 to 13 are done.
+
+function repeat(){
+echo "Country and their code are given bellow: "
+
+echo "---------------------"
+echo "|Country   |  Code   |"
+echo "---------------------"
+echo "|Brazil    |  BRZ    |"
+echo "---------------------"
+echo "|Argentina |  ARG    |"
+echo "---------------------"
+echo "|Nepal     |  NEP    |"
+echo "---------------------"
+echo "|China     |  CHI    |"
+echo "---------------------"
+echo "|England   |  ENG    |"
+echo "---------------------"
+
+echo -e "Please input the country code that are display in the table: \c"
+read guess
+
+#until loop is used to check winning team. here I also use if and if else for validation.
+until [ $guess = NEP ]
+do
+if [ $guess = BRZ ]
+then
+echo "guess does not match please input the correct match."
+elif [ $guess = ARG ]
+then
+echo "guess does not match please input the correct match."
+elif [ $guess = CHI ]
+then
+echo "guess does not match please input the correct match."
+elif [ $guess = ENG ]
+then
+echo "guess does not match please input the correct match."
+else
+echo "Please enter  contry code NPL, BRZ, ARG, CHI, ENG other text code number symbol are not acceptable "
+fi
+echo -e "input the contry code until the code match with the guess winning team: \c "
+read guess
+done
+echo "yes your guess is correct Nepal is a winnign team. There are many great footballer in nepali team like Kiran Chemjong, Hari Khadka, Bimal
+Gharti Magar etc  "
+
+echo "List out the five football players and their code are:"
+
+echo "-------------------------------"
+echo "|Player          |     Code   |"
+echo "-------------------------------"
+echo "|Lionel Messi    |  LM        |"
+echo "-------------------------------"
+echo "|Nemar Junior    |  NJ        |"
+echo "------------------------------"
+echo "|Kiran Chemjong  |  KC        |"
+echo "-------------------------------"
+echo "|Zheng Zhi       |  ZZ        |"
+echo "-------------------------------"
+echo "|Harry Kane      |  HK        |"
+echo "-------------------------------"
+
+echo
+players=("LM NJ KC ZZ HK ")
+
+echo -e "Please input the three player code out of five: \c "
+read a b c
+until [[ ${#c} = 2 && "${players[@]}" =~ "${a}" && "${players[@]}" =~ "${b}" && "${players[@]}" =~ "${c}"  &&
+"$a" =~ [A-Z] && "$b" =~ [A-Z] && "$c" =~ [A-Z] &&
+$a != $b &&  $a != $c && $b != $a && $b != $c && $c != $a && $c != $b ]]
+do
+
+echo "All 3 players code must match the code displayed above. "
+echo "All the players code are in upper case."
+echo "Sample input : LM NJ KC "
+echo -e "the code does not match with the condition i.e \n1 only input three parameters \n2 all the input match with players code and should be uppercase \n3 three input must be different. "
+echo -e "Again input the three input from the users: \c"
+read a b c
+done
+echo "All the condition were matched and your input is correct."
+
+PS3="list out the  players that you have choose above and Choose one player from the list: "
+select player in $a $b $c
+do
+if [ -z $player ]
+then
+echo "you are out of the option "
+elif [[ -f "$player" ]]
+then
+cat $player
+break
+else
+echo "your file is not presence in this directory so you are redirect to the step 4."
+repeat
+break
+fi
+done
+
+echo -e "please yes to continue: \c"
+read y
+if [ $y == yes ]
+then
+echo "Continue the program you are in step 4."
+repeat
+else
+exit
+fi
+}
+repeat
+
+else
+((counter++))
+fi
+done
