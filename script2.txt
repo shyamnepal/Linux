@@ -1,0 +1,397 @@
+Script started, file is 19031688cw2
+kali@LAPTOP-9Q9T5U9T:~/NBA/Chicago Bulls$ export PS1="\`pwd\` $ "
+/home/kali/NBA/Chicago Bulls $ ls -l
+total 0
+-rw-r--r-- 1 kali kali   0 Mar 23 19:24 19031688cw2
+-rw-r--r-- 1 kali kali 234 Mar 23 14:42 testResult
+-rw-r--r-- 1 kali kali  78 Mar 23 14:16 testX
+-rw-r--r-- 1 kali kali  78 Mar 23 14:19 testY
+-rw-r--r-- 1 kali kali  78 Mar 23 14:20 testZ
+/home/kali/NBA/Chicago Bulls $ chmod 000 testX
+/home/kali/NBA/Chicago Bulls $ ls -l testX
+---------- 1 kali kali 78 Mar 23 14:16 testX
+/home/kali/NBA/Chicago Bulls $ cat testX
+cat: testX: Permission denied
+/home/kali/NBA/Chicago Bulls $ cat >> testX
+bash: testX: Permission denied
+/home/kali/NBA/Chicago Bulls $
+/home/kali/NBA/Chicago Bulls $ chmod 666
+chmod: missing operand after ‘666’
+Try 'chmod --help' for more information.
+/home/kali/NBA/Chicago Bulls $ chmod 666 testX
+/home/kali/NBA/Chicago Bulls $ cat testX
+aaabb  Aaaaa
+AAAAA
+bbbcc  Bbbbb
+BBBBB
+ff–ff  Ccccc
+CCCCC
+cccdd  Ddddd
+DDDDD
+/home/kali/NBA/Chicago Bulls $ cat >> testX
+^Z
+[1]+  Stopped                 cat >> testX
+/home/kali/NBA/Chicago Bulls $ echo "after give the read and write permission to the file i am able to read and write the file using cat command."
+after give the read and write permission to the file i am able to read and write the file using cat command.
+/home/kali/NBA/Chicago Bulls $ cd ..
+/home/kali/NBA $ ls -l "Chicago Bulls"
+total 0
+-rw-r--r-- 1 kali kali   0 Mar 23 19:24 19031688cw2
+-rw-r--r-- 1 kali kali 234 Mar 23 14:42 testResult
+-rw-rw-rw- 1 kali kali  78 Mar 23 14:16 testX
+-rw-r--r-- 1 kali kali  78 Mar 23 14:19 testY
+-rw-r--r-- 1 kali kali  78 Mar 23 14:20 testZ
+/home/kali/NBA $ ls
+'Brooklyn nets'  'Chicago Bulls'  'Dallas Maveric'   Lakers
+/home/kali/NBA $ ls -l
+total 0
+drwxr-xr-x 1 kali kali 4096 Mar 23 14:31 'Brooklyn nets'
+drwxr-xr-x 1 kali kali 4096 Mar 23 19:24 'Chicago Bulls'
+drwxr-xr-x 1 kali kali 4096 Mar 23 12:51 'Dallas Maveric'
+drwxr-xr-x 1 kali kali 4096 Mar 23 12:51  Lakers
+/home/kali/NBA $ ls -ld 'Chicago Bulls'
+drwxr-xr-x 1 kali kali 4096 Mar 23 19:24 'Chicago Bulls'
+/home/kali/NBA $ chmod 000 'Chicago Bulls'
+/home/kali/NBA $ ls -ld 'Chicago Bulls'
+d--------- 1 kali kali 4096 Mar 23 19:24 'Chicago Bulls'
+/home/kali/NBA $ cd "Chicago Bulls"
+bash: cd: Chicago Bulls: Permission denied
+/home/kali/NBA $ cat testX
+cat: testX: No such file or directory
+/home/kali/NBA $ cat /"Chicago Bulls"/testX
+cat: '/Chicago Bulls/testX': No such file or directory
+/home/kali/NBA $ ls -l 'Chicago Bulls'
+ls: cannot open directory 'Chicago Bulls': Permission denied
+/home/kali/NBA $ cat "Chicago Bulls"/testX
+cat: 'Chicago Bulls/testX': Permission denied
+/home/kali/NBA $ cat > "Chicago Bulls"/file1
+bash: Chicago Bulls/file1: Permission denied
+/home/kali/NBA $ ls "Chicago Bulls"/
+ls: cannot open directory 'Chicago Bulls/': Permission denied
+/home/kali/NBA $ chmod u+wrx "Chicago Bulls"
+/home/kali/NBA $ cat "Chicago Bulls"/testX
+aaabb  Aaaaa
+AAAAA
+bbbcc  Bbbbb
+BBBBB
+ff–ff  Ccccc
+CCCCC
+cccdd  Ddddd
+DDDDD
+/home/kali/NBA $ cat > "Chicago Bulls"/file1
+this is the file
+^Z
+[2]+  Stopped                 cat > "Chicago Bulls"/file1
+/home/kali/NBA $ ls "Chicago Bulls"/
+19031688cw2  file1  testResult  testX  testY  testZ
+/home/kali/NBA $ cd "Brooklyn nets"
+/home/kali/NBA/Brooklyn nets $ grep bb testX
+aaabb  Aaaaa
+bbbcc  Bbbbb
+/home/kali/NBA/Brooklyn nets $ grep -v bb testX
+AAAAA
+BBBBB
+ff–ff  Ccccc
+CCCCC
+cccdd  Ddddd
+DDDDD
+/home/kali/NBA/Brooklyn nets $ grep -n bb testX
+1:aaabb  Aaaaa
+3:bbbcc  Bbbbb
+/home/kali/NBA/Brooklyn nets $ grep -l bb *
+testX
+testY
+testZ
+/home/kali/NBA/Brooklyn nets $ grep -l bb
+^Z
+[3]+  Stopped                 grep -l bb
+/home/kali/NBA/Brooklyn nets $ grep -i bb *
+testX:aaabb  Aaaaa
+testX:bbbcc  Bbbbb
+testX:BBBBB
+testY:aaabb  Aaaaa
+testY:bbbcc  Bbbbb
+testY:BBBBB
+testZ:aaabb  Aaaaa
+testZ:bbbcc  Bbbbb
+testZ:BBBBB
+/home/kali/NBA/Brooklyn nets $ grep -i BB *
+testX:aaabb  Aaaaa
+testX:bbbcc  Bbbbb
+testX:BBBBB
+testY:aaabb  Aaaaa
+testY:bbbcc  Bbbbb
+testY:BBBBB
+testZ:aaabb  Aaaaa
+testZ:bbbcc  Bbbbb
+testZ:BBBBB
+/home/kali/NBA/Brooklyn nets $ grep -c bb *
+testX:2
+testY:2
+testZ:2
+/home/kali/NBA/Brooklyn nets $ grep -C bb *
+grep: bb: invalid context length argument
+/home/kali/NBA/Brooklyn nets $ grep -ic bb *
+testX:3
+testY:3
+testZ:3
+/home/kali/NBA/Brooklyn nets $ grep '^A' *
+testX:AAAAA
+testY:AAAAA
+testZ:AAAAA
+/home/kali/NBA/Brooklyn nets $ grep '^' *
+testX:aaabb  Aaaaa
+testX:AAAAA
+testX:bbbcc  Bbbbb
+testX:BBBBB
+testX:ff–ff  Ccccc
+testX:CCCCC
+testX:cccdd  Ddddd
+testX:DDDDD
+testY:aaabb  Aaaaa
+testY:AAAAA
+testY:bbbcc  Bbbbb
+testY:BBBBB
+testY:ff–ff  Ccccc
+testY:CCCCC
+testY:cccdd  Ddddd
+testY:DDDDD
+testZ:aaabb  Aaaaa
+testZ:AAAAA
+testZ:bbbcc  Bbbbb
+testZ:BBBBB
+testZ:ff–ff  Ccccc
+testZ:CCCCC
+testZ:cccdd  Ddddd
+testZ:DDDDD
+/home/kali/NBA/Brooklyn nets $ grep '^B' *
+testX:BBBBB
+testY:BBBBB
+testZ:BBBBB
+/home/kali/NBA/Brooklyn nets $ grep '^b' *
+testX:bbbcc  Bbbbb
+testY:bbbcc  Bbbbb
+testZ:bbbcc  Bbbbb
+/home/kali/NBA/Brooklyn nets $ grep -n '^' testX
+1:aaabb  Aaaaa
+2:AAAAA
+3:bbbcc  Bbbbb
+4:BBBBB
+5:ff–ff  Ccccc
+6:CCCCC
+7:cccdd  Ddddd
+8:DDDDD
+/home/kali/NBA/Brooklyn nets $ lsal
+bash: lsal: command not found
+/home/kali/NBA/Brooklyn nets $ alias lsal="ls -al"
+/home/kali/NBA/Brooklyn nets $ lsal
+total 0
+drwxr-xr-x 1 kali kali 4096 Mar 23 14:31 .
+drwxr-xr-x 1 kali kali 4096 Mar 23 12:58 ..
+-rw-r--r-- 1 kali kali   78 Mar 23 14:32 testX
+-rw-r--r-- 1 kali kali   78 Mar 23 14:32 testY
+-rw-r--r-- 1 kali kali   78 Mar 23 14:32 testZ
+/home/kali/NBA/Brooklyn nets $ alias lsa="ls -a"
+/home/kali/NBA/Brooklyn nets $ lsa
+.  ..  testX  testY  testZ
+/home/kali/NBA/Brooklyn nets $ .bashrc
+bash: .bashrc: command not found
+/home/kali/NBA/Brooklyn nets $ cd
+/home/kali $ alias
+alias cls='clear'
+alias ls='ls --color=auto'
+alias lsa='ls -a'
+alias lsal='ls -al'
+/home/kali $ unalias lsa lsal
+/home/kali $ alias
+alias cls='clear'
+alias ls='ls --color=auto'
+/home/kali $ exit
+exit
+There are stopped jobs.
+/home/kali $ cd NBA
+/home/kali/NBA $ ls
+'Brooklyn nets'  'Chicago Bulls'  'Dallas Maveric'   Lakers
+/home/kali/NBA $ cd "chicago Bulls"
+bash: cd: chicago Bulls: No such file or directory
+/home/kali/NBA $ cd "Chicago Bulls"
+/home/kali/NBA/Chicago Bulls $ ls
+19031688cw2  file1  testResult  testX  testY  testZ
+/home/kali/NBA/Chicago Bulls $ cat 19031688cw2
+Script started on 2021-03-23 19:24:18+05:45 [TERM="xterm-256color" TTY="/dev/tty1" COLUMNS="120" LINES="20"]
+kali@LAPTOP-9Q9T5U9T:~/NBA/Chicago Bulls$ export PS1="\`pwd\` $ "
+/home/kali/NBA/Chicago Bulls $ ls -l
+total 0
+-rw-r--r-- 1 kali kali   0 Mar 23 19:24 19031688cw2
+-rw-r--r-- 1 kali kali 234 Mar 23 14:42 testResult
+-rw-r--r-- 1 kali kali  78 Mar 23 14:16 testX
+-rw-r--r-- 1 kali kali  78 Mar 23 14:19 testY
+-rw-r--r-- 1 kali kali  78 Mar 23 14:20 testZ
+/home/kali/NBA/Chicago Bulls $ chmod 000 testX
+/home/kali/NBA/Chicago Bulls $ ls -l testX
+---------- 1 kali kali 78 Mar 23 14:16 testX
+/home/kali/NBA/Chicago Bulls $ cat testX
+cat: testX: Permission denied
+/home/kali/NBA/Chicago Bulls $ cat >> testX
+bash: testX: Permission denied
+/home/kali/NBA/Chicago Bulls $
+/home/kali/NBA/Chicago Bulls $ chmod 666
+chmod: missing operand after ‘666’
+Try 'chmod --help' for more information.
+/home/kali/NBA/Chicago Bulls $ chmod 666 testX
+/home/kali/NBA/Chicago Bulls $ cat testX
+aaabb  Aaaaa
+AAAAA
+bbbcc  Bbbbb
+BBBBB
+ff–ff  Ccccc
+CCCCC
+cccdd  Ddddd
+DDDDD
+/home/kali/NBA/Chicago Bulls $ cat >> testX
+^Z
+[1]+  Stopped                 cat >> testX
+/home/kali/NBA/Chicago Bulls $ echo "after give the read and write permission to the file i am able to read and write the file using cat command."
+after give the read and write permission to the file i am able to read and write the file using cat command.
+/home/kali/NBA/Chicago Bulls $ cd ..
+/home/kali/NBA $ ls -l "Chicago Bulls"
+total 0
+-rw-r--r-- 1 kali kali   0 Mar 23 19:24 19031688cw2
+-rw-r--r-- 1 kali kali 234 Mar 23 14:42 testResult
+-rw-rw-rw- 1 kali kali  78 Mar 23 14:16 testX
+-rw-r--r-- 1 kali kali  78 Mar 23 14:19 testY
+-rw-r--r-- 1 kali kali  78 Mar 23 14:20 testZ
+/home/kali/NBA $ ls
+'Brooklyn nets'  'Chicago Bulls'  'Dallas Maveric'   Lakers
+/home/kali/NBA $ ls -l
+total 0
+drwxr-xr-x 1 kali kali 4096 Mar 23 14:31 'Brooklyn nets'
+drwxr-xr-x 1 kali kali 4096 Mar 23 19:24 'Chicago Bulls'
+drwxr-xr-x 1 kali kali 4096 Mar 23 12:51 'Dallas Maveric'
+drwxr-xr-x 1 kali kali 4096 Mar 23 12:51  Lakers
+/home/kali/NBA $ ls -ld 'Chicago Bulls'
+drwxr-xr-x 1 kali kali 4096 Mar 23 19:24 'Chicago Bulls'
+/home/kali/NBA $ chmod 000 'Chicago Bulls'
+/home/kali/NBA $ ls -ld 'Chicago Bulls'
+d--------- 1 kali kali 4096 Mar 23 19:24 'Chicago Bulls'
+/home/kali/NBA $ cd "Chicago Bulls"
+bash: cd: Chicago Bulls: Permission denied
+/home/kali/NBA $ cat testX
+cat: testX: No such file or directory
+/home/kali/NBA $ cat /"Chicago Bulls"/testX
+cat: '/Chicago Bulls/testX': No such file or directory
+/home/kali/NBA $ ls -l 'Chicago Bulls'
+ls: cannot open directory 'Chicago Bulls': Permission denied
+/home/kali/NBA $ cat "Chicago Bulls"/testX
+cat: 'Chicago Bulls/testX': Permission denied
+/home/kali/NBA $ cat > "Chicago Bulls"/file1
+bash: Chicago Bulls/file1: Permission denied
+/home/kali/NBA $ ls "Chicago Bulls"/
+ls: cannot open directory 'Chicago Bulls/': Permission denied
+/home/kali/NBA $ chmod u+wrx "Chicago Bulls"
+/home/kali/NBA $ cat "Chicago Bulls"/testX
+aaabb  Aaaaa
+AAAAA
+bbbcc  Bbbbb
+BBBBB
+ff–ff  Ccccc
+CCCCC
+cccdd  Ddddd
+DDDDD
+/home/kali/NBA $ cat > "Chicago Bulls"/file1
+this is the file
+^Z
+[2]+  Stopped                 cat > "Chicago Bulls"/file1
+/home/kali/NBA $ ls "Chicago Bulls"/
+19031688cw2  file1  testResult  testX  testY  testZ
+/home/kali/NBA $ cd "Brooklyn nets"
+/home/kali/NBA/Brooklyn nets $ grep bb testX
+aaabb  Aaaaa
+bbbcc  Bbbbb
+/home/kali/NBA/Brooklyn nets $ grep -v bb testX
+AAAAA
+BBBBB
+ff–ff  Ccccc
+CCCCC
+cccdd  Ddddd
+DDDDD
+/home/kali/NBA/Brooklyn nets $ grep -n bb testX
+1:aaabb  Aaaaa
+3:bbbcc  Bbbbb
+/home/kali/NBA/Brooklyn nets $ grep -l bb *
+testX
+testY
+testZ
+/home/kali/NBA/Brooklyn nets $ grep -l bb
+^Z
+[3]+  Stopped                 grep -l bb
+/home/kali/NBA/Brooklyn nets $ grep -i bb *
+testX:aaabb  Aaaaa
+testX:bbbcc  Bbbbb
+testX:BBBBB
+testY:aaabb  Aaaaa
+testY:bbbcc  Bbbbb
+testY:BBBBB
+testZ:aaabb  Aaaaa
+testZ:bbbcc  Bbbbb
+testZ:BBBBB
+/home/kali/NBA/Brooklyn nets $ grep -i BB *
+testX:aaabb  Aaaaa
+testX:bbbcc  Bbbbb
+testX:BBBBB
+testY:aaabb  Aaaaa
+testY:bbbcc  Bbbbb
+testY:BBBBB
+testZ:aaabb  Aaaaa
+testZ:bbbcc  Bbbbb
+testZ:BBBBB
+/home/kali/NBA/Brooklyn nets $ grep -c bb *
+testX:2
+testY:2
+testZ:2
+/home/kali/NBA/Brooklyn nets $ grep -C bb *
+grep: bb: invalid context length argument
+/home/kali/NBA/Brooklyn nets $ grep -ic bb *
+testX:3
+testY:3
+testZ:3
+/home/kali/NBA/Brooklyn nets $ grep '^A' *
+testX:AAAAA
+testY:AAAAA
+testZ:AAAAA
+/home/kali/NBA/Brooklyn nets $ grep '^' *
+testX:aaabb  Aaaaa
+testX:AAAAA
+testX:bbbcc  Bbbbb
+testX:BBBBB
+testX:ff–ff  Ccccc
+testX:CCCCC
+testX:cccdd  Ddddd
+testX:DDDDD
+testY:aaabb  Aaaaa
+testY:AAAAA
+testY:bbbcc  Bbbbb
+testY:BBBBB
+testY:ff–ff  Ccccc
+testY:CCCCC
+testY:cccdd  Ddddd
+testY:DDDDD
+testZ:aaabb  Aaaaa
+testZ:AAAAA
+testZ:bbbcc  Bbbbb
+testZ:BBBBB
+testZ:ff–ff  Ccccc
+testZ:CCCCC
+testZ:cccdd  Ddddd
+testZ:DDDDD
+/home/kali/NBA/Brooklyn nets $ grep '^B' *
+testX:BBBBB
+testY:BBBBB
+testZ:BBBBB
+/home/kali/NBA/Brooklyn nets $ grep '^b' *
+testX:bbbcc  Bbbbb
+testY:bbbcc  Bbbbb
+testZ:bbbcc  Bbbbb
+/home/kali/NBA/Brooklyn nets $ grep -n '^' testX
+1:aaabb  Aaaaa
+2:AAAAA

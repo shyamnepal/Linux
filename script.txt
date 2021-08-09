@@ -1,0 +1,325 @@
+Script started on 2021-03-23 12:50:44+05:45 [TERM="xterm-256color" TTY="/dev/tty1" COLUMNS="120" LINES="30"]
+kali@LAPTOP-9Q9T5U9T:~$ export PS1="\`pwd\` $ "
+/home/kali $ mkdir -p NBA/{Lakers,Miami,"Chicago Bulls","Brooklyn nets","Dallas Maveric"}
+/home/kali $ ls -R NBA
+NBA:
+'Brooklyn nets'  'Chicago Bulls'  'Dallas Maveric'   Lakers   Miami
+
+'NBA/Brooklyn nets':
+
+'NBA/Chicago Bulls':
+
+'NBA/Dallas Maveric':
+
+NBA/Lakers:
+
+NBA/Miami:
+/home/kali $  cd NBA/Miami
+/home/kali/NBA/Miami $ pwd
+/home/kali/NBA/Miami
+/home/kali/NBA/Miami $ echo "I am in the Miami directory pwd print my working directory"
+I am in the Miami directory pwd print my working directory
+/home/kali/NBA/Miami $ touch file1 file2
+/home/kali/NBA/Miami $ cd ..
+/home/kali/NBA $ rm -ir Miami
+rm: descend into directory 'Miami'? yes
+rm: remove regular empty file 'Miami/file1'? yes
+rm: remove regular empty file 'Miami/file2'? yes
+rm: remove directory 'Miami'? yes
+/home/kali/NBA $ ls
+'Brooklyn nets'  'Chicago Bulls'  'Dallas Maveric'   Lakers
+/home/kali/NBA $ echo "Here is no Miami directory. It is remove from NBA directory"
+Here is no Miami directory. It is remove from NBA directory
+/home/kali/NBA $ echo "Hello! I am big fan of NBA finals."
+Hello! I am big fan of NBA finals.
+/home/kali/NBA $ echo "14 < (2+2)"
+14 < (2+2)
+/home/kali/NBA $ pwd
+/home/kali/NBA
+/home/kali/NBA $ echo "I am still in the NBA directory"
+I am still in the NBA directory
+/home/kali/NBA $ cd Lakers
+/home/kali/NBA/Lakers $ pwd
+/home/kali/NBA/Lakers
+/home/kali/NBA/Lakers $ echo "Now I am in the Lakers directory using the cd command and print the current directory /hom
+e/kali/NBA/Lakers "
+Now I am in the Lakers directory using the cd command and print the current directory /home/kali/NBA/Lakers
+/home/kali/NBA/Lakers $ pwd;cd;pwd
+/home/kali/NBA/Lakers
+/home/kali
+/home/kali $ echo "pwd is used to print the current directory so first pwd print that I am in the Lakers directory and then cd command is used to change directory to the home directory and now I am in the home directory. pwd print to the ho
+me directory that is /home/kali"
+pwd is used to print the current directory so first pwd print that I am in the Lakers directory and then cd command is used to change directory to the home directory and now I am in the home directory. pwd print to the home directory that is /home/kali
+/home/kali $ cd NBA/Lakers
+/home/kali/NBA/Lakers $ pwd; cd ..; pwd; cd ..; pwd
+/home/kali/NBA/Lakers
+/home/kali/NBA
+/home/kali
+/home/kali $ echo "first pwd print that to present directory that is /home/kali/NBA/Lakers. Now cd .. command is used to one step back from the present drectory which is NBA directory and print /home/kali/NBA agian cd .. goes to the previou
+s directory from NBA directory that is /home/kali"
+first pwd print that to present directory that is /home/kali/NBA/Lakers. Now cd .. command is used to one step back from the present drectory which is NBA directory and print /home/kali/NBA agian cd .. goes to the previous directory from NBA directory that is /home/kali
+/home/kali $ cd; pwd
+/home/kali
+/home/kali $ echo "cd command change from the present directory to the home directory and pwd print the present working directory here I am in the home directory so nothing happen but pwd print the home directory that is /home/kali"
+cd command change from the present directory to the home directory and pwd print the present working directory here I am in the home directory so nothing happen but pwd print the home directory that is /home/kali
+/home/kali $ ls
+19031688cw2  hari  lab2  lab4  lecture17  lecture18  NBA  shyam  summer  Test
+/home/kali $ echo "ls is use to list all the file and directory except hidden file and directory in the present director
+y"
+ls is use to list all the file and directory except hidden file and directory in the present directory
+/home/kali $ ls -a
+.   19031688cw2    .bash_logout  hari  lab4       lecture18  NBA       shyam   Test
+..  .bash_history  .bashrc       lab2  lecture17  .local     .profile  summer
+/home/kali $
+/home/kali $ echo "ls -a list all the file and directory and also show the hidden file and directory from the present directory"
+ls -a list all the file and directory and also show the hidden file and directory from the present directory
+/home/kali $ ls -al
+total 88
+drwxr-xr-x 1 kali kali  4096 Mar 23 12:51 .
+drwxr-xr-x 1 root root  4096 Aug 14  2020 ..
+-rw-r--r-- 1 kali kali 61440 Mar 23 13:40 19031688cw2
+-rw------- 1 kali kali 12483 Mar 21 11:39 .bash_history
+-rw-r--r-- 1 kali kali   220 Jul 15  2020 .bash_logout
+-rw-r--r-- 1 kali kali  3544 Aug 21  2020 .bashrc
+drwxr-xr-x 1 kali kali  4096 Mar 21 10:02 hari
+drwxr-xr-x 1 kali kali  4096 Mar  9 21:00 lab2
+drwxr-xr-x 1 kali kali  4096 Mar 18 10:39 lab4
+drwxr-xr-x 1 kali kali  4096 Mar 18 09:55 lecture17
+drwxr-xr-x 1 kali kali  4096 Mar  9 21:13 lecture18
+drwxrwxrwx 1 kali kali  4096 Aug 13  2020 .local
+drwxr-xr-x 1 kali kali  4096 Mar 23 12:58 NBA
+-rw-r--r-- 1 kali kali   807 Jul 15  2020 .profile
+drwxrwxrwx 1 kali kali  4096 Mar 21 08:13 shyam
+drwxrwxrwx 1 kali kali  4096 Aug 13  2020 summer
+drwxrwxrwx 1 kali kali  4096 Aug 21  2020 Test
+/home/kali $ echo "ls -al show long listing format that is more information about the file and directory including hidden file and directory like file name, size, ownew, date last modified etc "
+ls -al show long listing format that is more information about the file and directory including hidden file and directory like file name, size, ownew, date last modified etc
+/home/kali $ cd; pwd; cd cw2; pwd
+/home/kali
+bash: cd: cw2: No such file or directory
+/home/kali
+/home/kali $ echo "cd change from present directory to the home directory that is /home/kali so that pwd print /home/kali and then there is no any cw2 directory in home directory so there is an erroe message show No such file or directory a
+nd now agian pwd print the /home/kali if there is cw2 directory pwd print /home/kali/cw2 "
+cd change from present directory to the home directory that is /home/kali so that pwd print /home/kali and then there is no any cw2 directory in home directory so there is an erroe message show No such file or directory and now agian pwd print the /home/kali if there is cw2 directory pwd print /home/kali/cw2
+/home/kali $ ls -R
+.:
+19031688cw2  hari  lab2  lab4  lecture17  lecture18  NBA  shyam  summer  Test
+
+./hari:
+ nepal  'rajeep nepal'  'shyam nepal'
+
+./hari/nepal:
+
+'./hari/rajeep nepal':
+
+'./hari/shyam nepal':
+
+./lab2:
+extest1  extest2  num1  read1  read2  subtest
+
+./lab4:
+lab5  q1  q2  q3  q4  test1
+
+./lecture17:
+case  ifelse  ifstatement  nestedif  select
+
+./lecture18:
+for  until  while
+
+./NBA:
+'Brooklyn nets'  'Chicago Bulls'  'Dallas Maveric'   Lakers
+
+'./NBA/Brooklyn nets':
+
+'./NBA/Chicago Bulls':
+
+'./NBA/Dallas Maveric':
+
+./NBA/Lakers:
+
+./shyam:
+11  file  file1  file2  file3  file4.txt  file5  file.txt  Home  names  nepal  newfile  summer
+
+./shyam/Home:
+add  c12  file1  file2  file3  program  sum  swithch  testResult
+
+./shyam/nepal:
+1  file2
+
+./summer:
+1  file2  gajurel  lab1  shyam
+
+./summer/lab1:
+file1
+
+./Test:
+testx  testy  testz
+/home/kali $ echo "ls -R show all the directories and files within the specified directory"
+ls -R show all the directories and files within the specified directory
+/home/kali $ cd NBA/"Chicago Bulls"
+/home/kali/NBA/Chicago Bulls $ cat > testX
+aaabb  Aaaaa
+AAAAA
+bbbcc  Bbbbb  BBBBB
+ff–ff  Ccccc  CCCCC
+cccdd  Ddddd  DDDDD
+^Z
+[1]+  Stopped                 cat > testX
+/home/kali/NBA/Chicago Bulls $ rm testX
+/home/kali/NBA/Chicago Bulls $ ls
+/home/kali/NBA/Chicago Bulls $ cat > testX
+aaabb  Aaaaa
+AAAAA
+bbbcc  Bbbbb
+BBBBB
+ff–ff  Ccccc
+CCCCC
+cccdd  Ddddd
+DDDDD
+^Z
+[2]+  Stopped                 cat > testX
+/home/kali/NBA/Chicago Bulls $ ls
+testX
+/home/kali/NBA/Chicago Bulls $ cat > testY
+aaabb  Aaaaa
+AAAAA
+bbbcc  Bbbbb
+BBBBB
+ff–ff  Ccccc
+CCCCC
+cccdd  Ddddd
+DDDDD
+^Z
+[3]+  Stopped                 cat > testY
+/home/kali/NBA/Chicago Bulls $ testZ
+bash: testZ: command not found
+/home/kali/NBA/Chicago Bulls $ cat > testZ
+aaabb  Aaaaa
+AAAAA
+bbbcc  Bbbbb
+BBBBB
+ff–ff  Ccccc
+CCCCC
+cccdd  Ddddd
+DDDDD
+^Z
+[4]+  Stopped                 cat > testZ
+/home/kali/NBA/Chicago Bulls $ cat testX
+aaabb  Aaaaa
+AAAAA
+bbbcc  Bbbbb
+BBBBB
+ff–ff  Ccccc
+CCCCC
+cccdd  Ddddd
+DDDDD
+/home/kali/NBA/Chicago Bulls $ cat testY
+aaabb  Aaaaa
+AAAAA
+bbbcc  Bbbbb
+BBBBB
+ff–ff  Ccccc
+CCCCC
+cccdd  Ddddd
+DDDDD
+/home/kali/NBA/Chicago Bulls $ cat testZ
+aaabb  Aaaaa
+AAAAA
+bbbcc  Bbbbb
+BBBBB
+ff–ff  Ccccc
+CCCCC
+cccdd  Ddddd
+DDDDD
+/home/kali/NBA/Chicago Bulls $ cp testX testY testZ  cd ../"Brooklyn nets"/
+cp: cannot stat 'cd': No such file or directory
+/home/kali/NBA/Chicago Bulls $ cp testX testY testZ  ../"Brooklyn nets"/
+/home/kali/NBA/Chicago Bulls $ cat testX testY testZ
+aaabb  Aaaaa
+AAAAA
+bbbcc  Bbbbb
+BBBBB
+ff–ff  Ccccc
+CCCCC
+cccdd  Ddddd
+DDDDD
+aaabb  Aaaaa
+AAAAA
+bbbcc  Bbbbb
+BBBBB
+ff–ff  Ccccc
+CCCCC
+cccdd  Ddddd
+DDDDD
+aaabb  Aaaaa
+AAAAA
+bbbcc  Bbbbb
+BBBBB
+ff–ff  Ccccc
+CCCCC
+cccdd  Ddddd
+DDDDD
+/home/kali/NBA/Chicago Bulls $ cat testX testY testZ > testResult
+/home/kali/NBA/Chicago Bulls $ cat testResult
+aaabb  Aaaaa
+AAAAA
+bbbcc  Bbbbb
+BBBBB
+ff–ff  Ccccc
+CCCCC
+cccdd  Ddddd
+DDDDD
+aaabb  Aaaaa
+AAAAA
+bbbcc  Bbbbb
+BBBBB
+ff–ff  Ccccc
+CCCCC
+cccdd  Ddddd
+DDDDD
+aaabb  Aaaaa
+AAAAA
+bbbcc  Bbbbb
+BBBBB
+ff–ff  Ccccc
+CCCCC
+cccdd  Ddddd
+DDDDD
+/home/kali/NBA/Chicago Bulls $ echo "yes it is correct because testResult show all the text of testX, testY and testZ "
+yes it is correct because testResult show all the text of testX, testY and testZ
+/home/kali/NBA/Chicago Bulls $ cat test[XYZ]
+aaabb  Aaaaa
+AAAAA
+bbbcc  Bbbbb
+BBBBB
+ff–ff  Ccccc
+CCCCC
+cccdd  Ddddd
+DDDDD
+aaabb  Aaaaa
+AAAAA
+bbbcc  Bbbbb
+BBBBB
+ff–ff  Ccccc
+CCCCC
+cccdd  Ddddd
+DDDDD
+aaabb  Aaaaa
+AAAAA
+bbbcc  Bbbbb
+BBBBB
+ff–ff  Ccccc
+CCCCC
+cccdd  Ddddd
+DDDDD
+/home/kali/NBA/Chicago Bulls $ echo "cat test[XYZ] is concatenate the file. is show all the text of testX, testY and tes
+tZ"
+cat test[XYZ] is concatenate the file. is show all the text of testX, testY and testZ
+/home/kali/NBA/Chicago Bulls $ exit
+exit
+There are stopped jobs.
+/home/kali/NBA/Chicago Bulls $ cat 19031688cw2
+cat: 19031688cw2: No such file or directory
+/home/kali/NBA/Chicago Bulls $ cd
+/home/kali $ cat 19031688cw2
+Script started on 2021-03-23 12:50:44+05:45 [TERM="xterm-256color" TTY="/dev/tty1" COLUMNS="120" LINES="30"]
